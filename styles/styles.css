@@ -38,7 +38,7 @@
 }
 
 .getNewQuote:hover {
-/* 	background-color: #63f; */
+	opacity: .8;
 	transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -79,7 +79,7 @@
 }
 
 .social-buttons__item:hover {
-	opacity: .6;
+	opacity: .8;
 	transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;

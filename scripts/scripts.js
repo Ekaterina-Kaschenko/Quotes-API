@@ -43,11 +43,11 @@ $(function(){
 	});
 
 	function getRandomColor() {
-    var letters = '0123456789ABCDEF'.split('');
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+	  return 'rgb(' + getRandomNum(255) + ',' + getRandomNum(255) + ',' + getRandomNum(255) + ')';
+	}
+
+	//Случайное целое число в диапазоне (0, max]
+	function getRandomNum(max) {
+	  return Math.round ( Math.random() * max );
 	}
 }); // end of document.ready
