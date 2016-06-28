@@ -9,18 +9,18 @@
 .quote__wrapper {
   width: 80%;
   min-height: 300px;
-  background-color: #6fc;
+  background-color: #fff;
   border-radius: 10px;
   padding: 5%;
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 24px;
-  color: #fff;
-  position: relative;
+  text-align: justify;
 }
 
-.quote {
+.quoteContainer {
 	text-align: center;
-	color: #306;
+/* 	color: #fff; */
+
 }
 
 .getNewQuote {
@@ -30,12 +30,56 @@
   background-color: #69c;
   line-height: 40px;
   text-align: center;
-  float: left;
-  position: absolute;
-  right: 10%;
-  bottom: 19%;
+  float: right;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
 }
 
 .getNewQuote:hover {
 	background-color: #63f;
+	transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+}
+
+.authorContainer {
+	text-align: right;
+	margin: 30px 0;
+/* 	color: #fff; */
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+  position: fixed;
+  width: 70%;
+  bottom: 35%;
+  color: #fff;
+}
+
+.social-buttons {
+	display: flex;
+}
+
+.social-buttons__item {
+	width: 40px;
+	height: 40px;
+	background-color: red;
+	text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+}
+
+.social-buttons__item:hover {
+	opacity: .6;
+	transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
 }
