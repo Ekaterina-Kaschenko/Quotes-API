@@ -1,7 +1,7 @@
 .wrapper {
 	justify-content: center;
   align-items: center;
-  background-color: #66c;
+/*   background-color: #66c; */
   height: 100vh;
   display: flex;
 }
@@ -27,7 +27,7 @@
   width: 120px;
   height: 40px;
   border-radius: 5px;
-  background-color: #69c;
+/*   background-color: #69c; */
   line-height: 40px;
   text-align: center;
   float: right;
@@ -38,7 +38,7 @@
 }
 
 .getNewQuote:hover {
-	background-color: #63f;
+/* 	background-color: #63f; */
 	transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -64,9 +64,10 @@
 }
 
 .social-buttons__item {
+	display: block;
 	width: 40px;
 	height: 40px;
-	background-color: red;
+/* 	background-color: red; */
 	text-align: center;
   line-height: 40px;
   margin-right: 10px;
