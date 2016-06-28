@@ -16,7 +16,11 @@ $(function(){
 			 				// dataType: 'json',
 			 				success: function(data) {
 			 					console.log('Pulled from API!!');
-			 					alert(data);
+			 					console.log(data);
+			 					var dataObj = JSON.parse(data);
+			 					console.log(dataObj.quote);
+			 					var quoteContainer = document.getElementById('quoteContainer');
+			 						quoteContainer.innerHTML = dataObj.quote;
 			 		    },
 			 			   error: function() {
 			 			    console.log('Something did not happen as intended');
