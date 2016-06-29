@@ -78,6 +78,10 @@
   -moz-transition: all 0.2s ease;
 }
 
+.fa {
+	    color: #fff;
+}
+
 .social-buttons__item:hover {
 	opacity: .8;
 	transition: all 0.2s ease;
