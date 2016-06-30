@@ -15,6 +15,7 @@ $(function(){
 						socialButton = $('.social-buttons__item');
 
 				var dataObj = JSON.parse(data);
+
 				var quoteContainer = $('.quoteContainer')[0];
 					$(quoteContainer).html(dataObj.quote);
 				var authorContainer = $('.authorContainer')[0];
@@ -29,6 +30,15 @@ $(function(){
 					}
 					$(quoteContainer).css('color', randomColor);
 					$(authorContainer).css('color', randomColor);
+				var currentQuote = dataObj.quote;
+				var currentAuthor = dataObj.author;
+				console.log(currentAuthor, currentQuote);
+					$('.twitter').click(function() {
+				    if(!inIframe()) {
+				      openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
+				    }
+					});
+
 	    },
 		   error: function() {
 		    console.log('Something did not happen as intended');
@@ -48,17 +58,11 @@ $(function(){
 	  return Math.round ( Math.random() * max );
 	}
 
-	
-    ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-            p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = p + '://platform.twitter.com/widgets.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, 'script', 'twitter-wjs');
+function inIframe () { try { return window.self !== window.top; } catch (e) { return true; } }
+
+function openURL(url){
+  window.open(url, 'Share');
+}
 
 
 }); 
