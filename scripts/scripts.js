@@ -15,11 +15,12 @@ $(function(){
 						socialButton = $('.social-buttons__item');
 
 				var dataObj = JSON.parse(data);
-
+				var currentQuote = dataObj.quote;
+				var currentAuthor = dataObj.author;
 				var quoteContainer = $('.quoteContainer')[0];
-					$(quoteContainer).html(dataObj.quote);
+					$(quoteContainer).html(currentQuote);
 				var authorContainer = $('.authorContainer')[0];
-					$(authorContainer).html(dataObj.author);
+					$(authorContainer).html(currentAuthor);
 				var randomColor = getRandomColor();
 					$(wrapperObj).css('background-color', randomColor);
 					$(getNewQuote).css('background-color', randomColor);
@@ -30,9 +31,7 @@ $(function(){
 					}
 					$(quoteContainer).css('color', randomColor);
 					$(authorContainer).css('color', randomColor);
-				var currentQuote = dataObj.quote;
-				var currentAuthor = dataObj.author;
-				console.log(currentAuthor, currentQuote);
+				
 					$('.twitter').click(function() {
 				    if(!inIframe()) {
 				      openURL('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + currentQuote + '" ' + currentAuthor));
@@ -51,7 +50,10 @@ $(function(){
 	});
 
 	function getRandomColor() {
-	  return 'rgb(' + getRandomNum(255) + ',' + getRandomNum(255) + ',' + getRandomNum(255) + ')';
+		var colors = ['#7d4627', '#89bdd3', '#6ed3cf', '#9068be', '#e62739', '#3fb0ac','#173e43', '#312c32', '#5a5c51', '#729f98', '#283018', '#aa863a', '#6534ff', '#62bcfa', '#5e0231', '#856046', '#e05038', '#e6af4b', '#300032', '#c43235', '#16174f', '#963019', '', '#e05915'];
+	  var color = colors[getRandomNum(colors.length)];
+
+	  return color;
 	}
 
 	function getRandomNum(max) {
