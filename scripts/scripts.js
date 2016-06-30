@@ -36,7 +36,7 @@ $(function(){
 						vkontakte: function(purl, ptitle, pimg, text) {
 							url  = 'http://vkontakte.ru/share.php?';
 							url += 'url='          + encodeURIComponent(purl);
-							url += '&title='       + encodeURIComponent('"' + currentQuote + '".');
+							url += '&title='       + encodeURIComponent('"' + currentQuote + '"' + currentAuthor);
 							url += '&description=' + encodeURIComponent(text);
 							url += '&image='       + encodeURIComponent(pimg);
 							url += '&noparse=true';
@@ -69,10 +69,10 @@ $(function(){
 						Share.vkontakte('URL','TITLE','IMG_PATH', currentAuthor);
 					});
 					$('.facebook').click(function() {
-						Share.facebook('URL','TITLE','IMG_PATH','DESC');
+						Share.facebook(currentQuote,'TITLE','IMG_PATH','DESC');
 					});
 					$('.twitter').click(function() {
-						Share.twitter('URL','TITLE');
+						Share.twitter('URL', '"' + currentQuote + '" '  + currentAuthor);
 					});
 
 	    },
