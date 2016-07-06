@@ -72,12 +72,12 @@ $(function() {
   };
   Quotes.prototype.shareFacebook =  function(purl, ptitle, text) {
     var self = this;
-        var url  = 'https://www.facebook.com/dialog/share';
+        var url  = 'https://www.facebook.com/dialog/feed';
         url += '?app_id=' + 1631340873849527;
         url += '&display=popup';
         url += '&caption=' + ptitle;
         url += '&description=' + text;
-        // url += '&href=' + purl;
+        url += '&link=' + purl;
         url += '&redirect_uri=' + 'https://ekaterina-kaschenko.github.io/Quotes-API/facebook.html';
         console.log(url);
         window.open(url);
