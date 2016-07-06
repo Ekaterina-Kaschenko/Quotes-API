@@ -1,7 +1,13 @@
 .wrapper {
-	justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -15,7 +21,7 @@
 }
 
 .quoteContainer {
-	text-align: justify;
+  text-align: justify;
 }
 
 .getNewQuote {
@@ -32,32 +38,38 @@
 }
 
 .getNewQuote:hover {
-	opacity: .8;
-	transition: all 0.2s ease;
+  opacity: .8;
+  transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
 }
 
 .authorContainer {
-	text-align: right;
-	margin: 30px 0;
+  text-align: right;
+  margin: 30px 0;
 }
 
 .buttons {
-	display: flex;
-	justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: #fff;
 }
 
 .social-buttons {
-	display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .social-buttons__item {
-	display: block;
-	width: 40px;
-	height: 40px;
-	text-align: center;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
   line-height: 40px;
   margin-right: 10px;
   border-radius: 5px;
@@ -68,12 +80,12 @@
 }
 
 .fa {
-	color: #fff;
+  color: #fff;
 }
 
 .social-buttons__item:hover {
-	opacity: .8;
-	transition: all 0.2s ease;
+  opacity: .8;
+  transition: all 0.2s ease;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
 }
