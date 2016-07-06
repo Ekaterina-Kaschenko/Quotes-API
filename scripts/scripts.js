@@ -82,8 +82,8 @@ $(function() {
     // return self;
     url += '?app_id=' + 1631340873849527;
     url += '&display=popup';
-    url += '&caption=' + ptitle;
-    url += '&description=' + text;
+    url += '&caption=' + self.getQuoteText();
+    url += '&description=' + self.getQuoteAuthor();
     url += '&picture=' + pimg;
     url += '&redirect_uri=' + purl;
     console.log(url);
