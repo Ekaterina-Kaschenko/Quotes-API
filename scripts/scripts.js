@@ -73,14 +73,24 @@ $(function() {
   Quotes.prototype.shareFacebook =  function(purl, ptitle, pimg, text) {
     var self = this;
     var url  = 'http://www.facebook.com/sharer.php?s=100';
-    url += '&p[title]='     + encodeURIComponent( self.getQuoteAuthor());
-    url += '&p[summary]='   + encodeURIComponent(text);
-    url += '&p[url]='       + encodeURIComponent(purl);
-    url += '&p[images][0]=' + encodeURIComponent(pimg);
+    // url += '&p[title]='     + encodeURIComponent(ptitle);
+    // url += '&p[summary]='   + encodeURIComponent(text);
+    // url += '&p[url]='       + encodeURIComponent(purl);
+    // url += '&p[images][0]=' + encodeURIComponent(pimg);
+    // console.log(url);
+    // window.open(url);
+    // return self;
+    url += '?app_id=' + 1064406750262668;
+    url += '&display=popup';
+    url += '&caption=' + ptitle;
+    url += '&description=' + text;
+    url += '&picture=' + pimg;
+    url += '&redirect_uri=' + purl;
     console.log(url);
     window.open(url);
     return self;
   };
+
   Quotes.prototype.shareTwitter = function(purl, ptitle) {
     var self = this;
     var url  = 'http://twitter.com/share?';
