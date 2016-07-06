@@ -81,7 +81,7 @@ $(function() {
         url += '&href=' + purl;
         url += '&redirect_uri=' + purl;
         console.log(url);
-        // window.open(url);
+        window.open(url);
         return self;
   };
 
