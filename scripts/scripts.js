@@ -17,7 +17,7 @@ $(function() {
       self.shareTwitter('URL', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText);
     });
     $('.facebook').click(function() {
-      self.shareFacebook('URL','TITLE','IMG_PATH', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText());
+      self.shareFacebook(window.location.href ,'TITLE','', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText());
 
     });
     
@@ -72,7 +72,7 @@ $(function() {
   };
   Quotes.prototype.shareFacebook =  function(purl, ptitle, pimg, text) {
     var self = this;
-    var url  = 'http://www.facebook.com/sharer.php?s=100';
+    var url  = 'https://www.facebook.com/dialog/feed';
     // url += '&p[title]='     + encodeURIComponent(ptitle);
     // url += '&p[summary]='   + encodeURIComponent(text);
     // url += '&p[url]='       + encodeURIComponent(purl);
@@ -80,7 +80,7 @@ $(function() {
     // console.log(url);
     // window.open(url);
     // return self;
-    url += '?app_id=' + 1064406750262668;
+    url += '?app_id=' + 1631340873849527;
     url += '&display=popup';
     url += '&caption=' + ptitle;
     url += '&description=' + text;
