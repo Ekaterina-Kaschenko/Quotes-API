@@ -75,8 +75,8 @@ $(function() {
         var url  = 'https://www.facebook.com/dialog/share';
         url += '?app_id=' + 1631340873849527;
         url += '&display=popup';
-        url += '&caption=' + encodeURIComponent(self.getQuoteText());
-        url += '&description=' + encodeURIComponent(self.getQuoteAuthor());
+        url += '&caption=' + encodeURIComponent(self.getQuoteAuthor());
+        url += '&description=' + encodeURIComponent(self.getQuoteText());
         url += '&picture=' + pimg;
         url += '&href=' + purl;
         url += '&redirect_uri=' + purl;
