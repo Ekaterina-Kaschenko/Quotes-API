@@ -17,7 +17,7 @@ $(function() {
       self.shareTwitter('URL', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText);
     });
     $('.facebook').click(function() {
-      self.shareFacebook(window.location.href ,'TITLE','', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText());
+      self.shareFacebook('URL','TITLE','', '');
 
     });
     
@@ -73,20 +73,13 @@ $(function() {
   Quotes.prototype.shareFacebook =  function(purl, ptitle, pimg, text) {
     var self = this;
         var url  = 'https://www.facebook.com/dialog/share';
-        // url += '&p[title]='     + encodeURIComponent(ptitle);
-        // url += '&p[summary]='   + encodeURIComponent(text);
-        // url += '&p[url]='       + encodeURIComponent(purl);
-        // url += '&p[images][0]=' + encodeURIComponent(pimg);
-        // console.log(url);
-        // window.open(url);
-        // return self;
         url += '?app_id=' + 1631340873849527;
         url += '&display=popup';
-        url += '&caption=' + encodeURIComponent(self.getQuoteText());
-        url += '&description=' + encodeURIComponent(self.getQuoteAuthor());
+        url += '&caption=' + encodeURIComponent(self.getQuoteAuthor());
+        url += '&description=' + encodeURIComponent(self.getQuoteText());
         url += '&picture=' + pimg;
         url += '&href=' + purl;
-        url += '&redirect_uri=' + purl;
+        url += '&redirect_uri=' + purl; //html empty
         console.log(url);
         window.open(url);
         return self;
