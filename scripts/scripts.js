@@ -47,10 +47,12 @@ $(function() {
   Quotes.prototype.updateContent = function() {
   	var self = this;
     self.quoteContainer.html(self.getQuoteText());
-    self.authorContainer.html(self.getQuoteAuthor());
+    self.authorContainer.html(' - ' + self.getQuoteAuthor());
     
     var randomColor = getRandomColor();
     self.wrapperObj.css('background-color', randomColor);
+    self.quoteContainer.css('color', randomColor);
+    self.authorContainer.css('color', randomColor);
     self.newQuoteButton.css('background-color', randomColor);
     for (var i = 0; i < self.socialButton.length; i++) {
       self.socialButton[i].style['background-color'] = randomColor;
