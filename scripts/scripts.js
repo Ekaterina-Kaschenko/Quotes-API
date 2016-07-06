@@ -17,7 +17,7 @@ $(function() {
       self.shareTwitter('URL', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText);
     });
     $('.facebook').click(function() {
-      self.shareFacebook(window.location.href,'TITLE','', '"' + self.getQuoteText() + '" '  + self.getQuoteAuthor());
+      self.shareFacebook(window.location.href,'TITLE','', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText());
 
     });
     
@@ -75,8 +75,8 @@ $(function() {
         var url  = 'https://www.facebook.com/dialog/share';
         url += '?app_id=' + 1631340873849527;
         url += '&display=popup';
-        url += '&caption=' + encodeURIComponent(self.getQuoteAuthor());
-        url += '&description=' + encodeURIComponent(self.getQuoteText());
+        url += '&caption=' + encodeURIComponent(self.getQuoteText());
+        url += '&description=' + encodeURIComponent(self.getQuoteAuthor());
         url += '&picture=' + pimg;
         url += '&href=' + purl;
         url += '&redirect_uri=' + purl; //html empty
