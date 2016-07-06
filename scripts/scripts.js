@@ -17,7 +17,7 @@ $(function() {
       self.shareTwitter('URL', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText);
     });
     $('.facebook').click(function() {
-      self.shareFacebook(window.location.href, '"' + self.getQuoteAuthor() + '"', self.getQuoteText());
+      self.shareFacebook(window.location.href, '"' + self.getQuoteText() + '"', self.getQuoteAuthor());
 
     });
     
@@ -76,7 +76,7 @@ $(function() {
         url += '?app_id=' + 1631340873849527;
         url += '&display=popup';
         url += '&caption=' + ptitle;
-        url += '&description=' + text;
+        url += '&quote=' + text;
         url += '&href=' + purl;
         url += '&redirect_uri=' + 'https://ekaterina-kaschenko.github.io/Quotes-API/facebook.html';
         console.log(url);
