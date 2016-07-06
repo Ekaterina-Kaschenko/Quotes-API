@@ -17,7 +17,7 @@ $(function() {
       self.shareTwitter('URL', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText);
     });
     $('.facebook').click(function() {
-      self.shareFacebook(window.location.href,'TITLE','', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText());
+      self.shareFacebook(window.location.href ,'TITLE','', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText());
 
     });
     
@@ -79,7 +79,7 @@ $(function() {
         url += '&description=' + encodeURIComponent(self.getQuoteAuthor());
         url += '&picture=' + pimg;
         url += '&href=' + purl;
-        url += '&redirect_uri=' + purl; //html
+        url += '&redirect_uri=' + purl;
         console.log(url);
         window.open(url);
         return self;
