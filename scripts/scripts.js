@@ -17,7 +17,7 @@ $(function() {
       self.shareTwitter('URL', '"' + self.getQuoteAuthor() + '" '  + self.getQuoteText);
     });
     $('.facebook').click(function() {
-      self.shareFacebook('window.location.href','TITLE','', '"' + self.getQuoteText() + '" '  + self.getQuoteAuthor());
+      self.shareFacebook(window.location.href,'TITLE','', '"' + self.getQuoteText() + '" '  + self.getQuoteAuthor());
 
     });
     
