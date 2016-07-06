@@ -75,10 +75,10 @@ $(function() {
         var url  = 'https://www.facebook.com/dialog/share';
         url += '?app_id=' + 1631340873849527;
         url += '&display=popup';
-        url += '&caption=';
-        url += '&description=';
+        url += '&caption=' + ptitle;
+        url += '&description=' + text;
         url += '&picture=' + pimg;
-        url += '&href=';
+        url += '&href=' + '../facebook.html';
         url += '&redirect_uri=' + purl;
         console.log(url);
         window.open(url);
