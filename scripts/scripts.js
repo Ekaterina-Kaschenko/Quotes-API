@@ -2,14 +2,14 @@
 $(function() {
   function Quotes() {
     var self = this;
-    self.wrapperObj = $('.wrapper');
-    self.newQuoteButton = $('.getNewQuote');
-    self.socialButton = $('.social-buttons__item');
-    self.quoteContainer = $('.quoteContainer');
-    self.authorContainer = $('.authorContainer');
+    this.wrapperObj = $('.wrapper');
+    this.newQuoteButton = $('.getNewQuote');
+    this.socialButton = $('.social-buttons__item');
+    this.quoteContainer = $('.quoteContainer');
+    this.authorContainer = $('.authorContainer');
     
-    self.dataObj = null;
-    self.updateQuote();
+    this.dataObj = null;
+    this.updateQuote();
     $('.vk').click(function() {
       self.shareVK('URL', 'TITLE', 'IMG_PATH', self.getQuoteAuthor());
     });
@@ -25,7 +25,6 @@ $(function() {
   }
 
   Quotes.prototype.updateQuote = function() {
-  	var self = this;
     $.ajax({
       type: 'get',
       headers: {
@@ -36,8 +35,8 @@ $(function() {
       url: 'https://andruxnet-random-famous-quotes.p.mashape.com/',
       success: function(data) {
         console.log(data);
-        self.dataObj = JSON.parse(data);
-        self.updateContent();
+        this.dataObj = JSON.parse(data);
+        this.updateContent();
       },
       error: function() {
         console.log('Something did not happen as intended');
@@ -45,56 +44,52 @@ $(function() {
     });
   };
   Quotes.prototype.updateContent = function() {
-  	var self = this;
-    self.quoteContainer.html(self.getQuoteText());
-    self.authorContainer.html(' - ' + self.getQuoteAuthor());
+    this.quoteContainer.html(this.getQuoteText());
+    this.authorContainer.html(' - ' + this.getQuoteAuthor());
     
     var randomColor = getRandomColor();
-    self.wrapperObj.css('background-color', randomColor);
-    self.quoteContainer.css('color', randomColor);
-    self.authorContainer.css('color', randomColor);
-    self.newQuoteButton.css('background-color', randomColor);
-    for (var i = 0; i < self.socialButton.length; i++) {
-      self.socialButton[i].style['background-color'] = randomColor;
+    this.wrapperObj.css('background-color', randomColor);
+    this.quoteContainer.css('color', randomColor);
+    this.authorContainer.css('color', randomColor);
+    this.newQuoteButton.css('background-color', randomColor);
+    for (var i = 0; i < this.socialButton.length; i++) {
+      this.socialButton[i].style['background-color'] = randomColor;
     }
-    return self;
+    return this;
   };
   Quotes.prototype.shareVK = function(purl, ptitle, pimg, text) {
-  	var self = this;
     var url = 'http://vkontakte.ru/share.php?';
     url += 'url=' + encodeURIComponent(purl);
-    url += '&title=' + encodeURIComponent('"' + self.getQuoteText() + '" ' +
-    	self.getQuoteAuthor());
+    url += '&title=' + encodeURIComponent('"' + this.getQuoteText() + '" ' +
+    	this.getQuoteAuthor());
     url += '&description=' + encodeURIComponent(text);
     url += '&image=' + encodeURIComponent(pimg);
     url += '&noparse=true';
     console.log(url);
     window.open(url);
-    return self;
+    return this;
   };
   Quotes.prototype.shareFacebook =  function(purl, ptitle, text) {
-    var self = this;
-        var url  = 'https://www.facebook.com/dialog/feed';
-        url += '?app_id=' + 1631340873849527;
-        url += '&display=popup';
-        url += '&caption=' + ptitle;
-        url += '&description=' + text;
-        url += '&link=' + purl;
-        url += '&redirect_uri=' + 'https://ekaterina-kaschenko.github.io/Quotes-API/facebook.html';
-        console.log(url);
-        window.open(url);
-        return self;
+    var url  = 'https://www.facebook.com/dialog/feed';
+    url += '?app_id=' + 1631340873849527;
+    url += '&display=popup';
+    url += '&caption=' + ptitle;
+    url += '&description=' + text;
+    url += '&link=' + purl;
+    url += '&redirect_uri=' + 'https://ekaterina-kaschenko.github.io/Quotes-API/facebook.html';
+    console.log(url);
+    window.open(url);
+    return this;
   };
 
   Quotes.prototype.shareTwitter = function(purl, ptitle) {
-    var self = this;
     var url  = 'http://twitter.com/share?';
-    url += 'text='      + encodeURIComponent('"' + self.getQuoteText() + '" ' +
-      self.getQuoteAuthor());
+    url += 'text='      + encodeURIComponent('"' + this.getQuoteText() + '" ' +
+      this.getQuoteAuthor());
     url += '&url='      + encodeURIComponent(purl);
     url += '&counturl=' + encodeURIComponent(purl);
     window.open(url);
-    return self;
+    return this;
   };
 
   Quotes.prototype.getQuoteText = function() {
@@ -103,20 +98,20 @@ $(function() {
   Quotes.prototype.getQuoteAuthor = function() {
   	return this.dataObj.author;
   };
-	
-  var quotes = new Quotes();
+
+});
+
+var quotes = new Quotes();
 
   $('.getNewQuote').click(function() {
     quotes.updateQuote();
   });
 
-});
-
 function getRandomColor() {
-    var colors = ['#7d4627', '#89bdd3', '#6ed3cf', '#9068be', '#e62739', '#3fb0ac', '#173e43', '#312c32', '#5a5c51', '#729f98', '#283018', '#aa863a', '#6534ff', '#62bcfa', '#5e0231', '#856046', '#e05038', '#e6af4b', '#300032', '#c43235', '#16174f', '#963019', '#e05915'];
-    return colors[getRandomNum(colors.length - 1)];
-  }
+  var colors = ['#7d4627', '#89bdd3', '#6ed3cf', '#9068be', '#e62739', '#3fb0ac', '#173e43', '#312c32', '#5a5c51', '#729f98', '#283018', '#aa863a', '#6534ff', '#62bcfa', '#5e0231', '#856046', '#e05038', '#e6af4b', '#300032', '#c43235', '#16174f', '#963019', '#e05915'];
+  return colors[getRandomNum(colors.length - 1)];
+}
 
-  function getRandomNum(max) {
-    return Math.round(Math.random() * max);
-  }
+function getRandomNum(max) {
+  return Math.round(Math.random() * max);
+}
